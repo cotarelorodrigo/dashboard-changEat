@@ -54,10 +54,10 @@ class Statics extends Component {
         let todayProfit = 0
         for (let index = 0; index < this.state.tickets.length; index++) {
             const ticket = this.state.tickets[index]
-            const ticket_date = new Date(ticket['data'])
+            const ticket_date = new Date(ticket['date'])
             const ticket_day = ticket_date.getDate()
             if(ticket_day == today_day){
-                todayProfit += ticket['total']
+                todayProfit += ticket['comision']
             }
         }
         return todayProfit
@@ -67,21 +67,14 @@ class Statics extends Component {
         let ticket_info = []
         for (let index = this.state.tickets.length-1; index >= 0; index--) {
             const ticket = this.state.tickets[index]
-            let products = '';
-            for (let i = 0; i < ticket["items"].length; i++){
-                if(ticket["items"][i]['name'] != 'Envio'){
-                    products +=  (ticket["items"][i]['name'] + "(" + ticket["items"][i]['cantidad'] + ")")
-                    if (i != (ticket["items"].length - 1)){
-                        products += "  |  "
-                    }
-                }
-            }
             ticket_info.push(
                 {
+                    "Fecha":  ticket["date"],
                     "Email": ticket["email"],
-                    "Fecha":  ticket["data"],
-                    "Productos":  products,
-                    "Total gastado":ticket['total'],
+                    "Store": ticket["store"],
+                    "StoreId": ticket["store_id"],
+                    "Productos":  ticket["product_string"],
+                    "Total":ticket['total'],
                     "Comision":ticket['comision']
                 }
             )

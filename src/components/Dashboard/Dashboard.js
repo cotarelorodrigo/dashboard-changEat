@@ -115,10 +115,12 @@ export class GridContainer extends Component {
         return (
             <div>
                 <Grid style={{ height: 300, width: 1150 }} data={this.state.data}>
+                    <Column field="Fecha" title="Fecha" width="100px" />
                     <Column field="Email" title="Email" width="200px" />
-                    <Column field="Fecha" title="Fecha" width="300px" />
-                    <Column field="Productos" title="Products (Unidades)" width="300px" />
-                    <Column field="Total gastado" title="Total Gastado" width="200px" />
+                    <Column field="Store" title="Store" width="200px" />
+                    <Column field="StoreId" title="StoreId" width="100px" />
+                    <Column field="Productos" title="Productos (Unidades)" width="300px" />
+                    <Column field="Total" title="Total" width="100px" />
                     <Column field="Comision" title="Comision" width="100px" />
                 </Grid>
             </div>
