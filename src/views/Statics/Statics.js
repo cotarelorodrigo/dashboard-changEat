@@ -41,9 +41,9 @@ class Statics extends Component {
         let monthProfit = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
         for (let index = 0; index < this.state.tickets.length; index++) {
             const ticket = this.state.tickets[index]
-            const ticket_date = new Date(ticket['data'])
+            const ticket_date = new Date(ticket['date'])
             const ticket_month = ticket_date.getMonth()
-            monthProfit[ticket_month - 1] += ticket['total']
+            monthProfit[ticket_month - 1] += ticket['comision']
         }
         return monthProfit
     }
