@@ -39,7 +39,7 @@ class Statics extends Component {
     getMonthProfits(){
         const today = new Date();
         let monthProfit = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        for (let index = 0; index < this.state.tickets.length; index++) {
+        for (let index = 1; index < this.state.tickets.length; index++) {
             const ticket = this.state.tickets[index]
             const ticket_date = new Date(ticket['date'])
             const ticket_month = ticket_date.getMonth()
@@ -52,7 +52,7 @@ class Statics extends Component {
         const today = new Date();
         const today_day = today.getDate()
         let todayProfit = 0
-        for (let index = 0; index < this.state.tickets.length; index++) {
+        for (let index = 1; index < this.state.tickets.length; index++) {
             const ticket = this.state.tickets[index]
             const ticket_date = new Date(ticket['date'])
             const ticket_day = ticket_date.getDate()
@@ -65,7 +65,7 @@ class Statics extends Component {
 
     getTicketInfo(){
         let ticket_info = []
-        for (let index = this.state.tickets.length-1; index >= 0; index--) {
+        for (let index = this.state.tickets.length-1; index >= 1; index--) {
             const ticket = this.state.tickets[index]
             ticket_info.push(
                 {
